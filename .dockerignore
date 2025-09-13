@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+.cache/
+
+# Virtual env
+.venv/
+
+# Git
+.git
+.gitignore
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Local data
+examples/fixtures/*.tgz
+examples/fixtures/*.tar.gz
+
+# Docs drafts
+Sprints/
+*.md
+!README.md

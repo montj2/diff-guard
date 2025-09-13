@@ -1,0 +1,52 @@
+# ---- Python build / cache ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ---- Virtual environments ----
+.venv/
+venv/
+.envrc
+
+# ---- Environment & secrets ----
+.env
+.env.*
+!.env.example
+
+# ---- Packaging / dist ----
+dist/
+build/
+wheelhouse/
+*.egg-info/
+.eggs/
+
+# ---- Test / coverage ----
+.coverage*
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- Tooling / editors ----
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# ---- Logs / temp ----
+*.log
+*.tmp
+.cache/
+
+# ---- Node (optional future) ----
+node_modules/
+
+# ---- SQLite / DB ----
+*.db
+*.sqlite3
+
+# ---- Misc ----
+# docker override examples
+compose.override.yml
+docker-compose.override.yml

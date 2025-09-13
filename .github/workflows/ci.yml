@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11"]  # TODO: consider 3.12 once deps validated
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install .[dev]
+
+      - name: Lint & Type Check
+        run: |
+          ruff check .
+          black --check .
+          mypy .
+
+      - name: Run tests (coverage >=85%)
+        run: |
+          make test-strict COVERAGE_MIN=85
+
+      - name: Coverage report (human-readable)
+        if: always()
+        run: |
+          # Re-run pytest quickly just to show summary (already enforced above)
+          pytest -q || true
+
+      - name: TODO Backtest stub
+        run: echo "Backtest placeholder (to be implemented in later story)"
+
+  # TODO: add separate job for building/pushing Docker images (deferred)
+  # NOTE: Coverage threshold enforced via make test-strict; ratchet upward as real tests grow.
