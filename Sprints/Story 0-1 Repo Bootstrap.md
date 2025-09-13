@@ -82,10 +82,10 @@
 - [DONE] Update main `README.md` Quickstart with: clone, `make venv install`, `source .venv/bin/activate`, run API & worker.
 - [DONE] Add `CONTRIBUTING.md` describing quality gates and branch naming.
 
-### 12. Nice-to-Have (Optional in 0.1 if time)
-- [ ] `.vale.ini` for docs lint (defer if not needed).
-- [ ] `CODE_OF_CONDUCT.md`.
-- [ ] `SECURITY.md` placeholder.
+### 12. Nice-to-Have (Optional in 0.1 if time) [DONE]
+- [DONE] `.vale.ini` for docs lint (defer if not needed).
+- [DONE] `CODE_OF_CONDUCT.md`.
+- [DONE] `SECURITY.md` placeholder.
 
 ### 13. Definition of Done Validation
 - [ ] All directories & stubs committed.
