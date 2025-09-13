@@ -1,5 +1,12 @@
 # DiffGuard MVP — Project Guide
 
+<!-- Badges -->
+![CI](https://img.shields.io/github/actions/workflow/status/montj2/diff-guard/ci.yml?branch=master&label=CI)
+![Python](https://img.shields.io/badge/python-3.11-blue)
+![License](https://img.shields.io/github/license/montj2/diff-guard)
+![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
+
+
 > **Context for Copilot & contributors**
 > **Stack:** Python 3.11, FastAPI API, worker for diffs, SQLite (SQLAlchemy), Pydantic v2, Typer CLI, requests w/ timeouts+retries, structlog for JSON logs.
 > **Quality:** mypy (strict), ruff, black, pre-commit. Unit tests (pytest) for success/failure/edge.
