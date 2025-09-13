@@ -4,12 +4,13 @@ Thanks for your interest in improving DiffGuard! This document describes the dev
 
 ## Branching & Workflow
 
-1. Fork or create a feature branch from `main`.
+1. Base branch is currently `master` (legacy naming retained intentionally). Use `master` for new work unless a long-lived `develop` branch is introduced later.
 2. Branch name format:
    - `feat/<short-purpose>` for new features
    - `fix/<short-purpose>` for bug fixes
    - `chore/<task>` for maintenance/tooling
    - `docs/<area>` for documentation-only
+   - `refactor/<scope>` for structural changes w/out behavior change
 3. Keep changes focused; large refactors + features should be split.
 4. Open a Pull Request early (draft) for feedback.
 
@@ -26,12 +27,12 @@ chore: bump fastapi version
 ## Quality Gates (All Required)
 
 Before pushing or opening PR:
-- `make format` (auto-fixes ruff + black)
-- `make lint` (must pass: ruff, black --check, mypy strict)
-- `make test` (pytest green)
+- `make format` (auto-fixes via ruff + black)
+- `make lint` (ruff, black --check, mypy strict must all pass)
+- `make test-strict` (pytest with coverage threshold: default 85% line coverage)
 - Ensure pre-commit hooks installed: `pre-commit install`
 
-CI runs the same gates.
+CI runs the same gates; coverage threshold may be ratcheted upward as real tests mature.
 
 ## Adding Dependencies
 

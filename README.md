@@ -296,31 +296,34 @@ Create policy loader + decision engine.
 ## Quickstart (Local Dev)
 
 ```bash
-# One-time setup
+# 1. Clone
+git clone git@github.com:montj2/diff-guard.git
+cd diff-guard
+
+# 2. Create & activate virtualenv
 make venv
 source .venv/bin/activate
-make install  # installs runtime + dev deps
+
+# 3. Install project (runtime + dev) and pre-commit hooks
+make install
 pre-commit install
 
-# Run API (dev auto-reload)
-make run-api
-
-# Run worker (skeleton)
-make run-worker
-
-# All quality gates
+# 4. Run quality gates (optional upfront)
 make lint
-make test
+make test-strict  # enforces default COVERAGE_MIN=85
 
-# Enforce minimum coverage (default 85%)
-make test-strict
-make test-strict COVERAGE_MIN=90  # override threshold
+# 5. Start services (separate terminals)
+make run-api      # FastAPI with reload
+make run-worker   # Worker skeleton
 
-# Format code (ruff fix + black)
+# 6. CLI example
+python -m backend.cli list
+
+# Formatting (auto-fix)
 make format
 
-# CLI usage
-python -m backend.cli list
+# Override coverage threshold if desired
+make test-strict COVERAGE_MIN=90
 ```
 
 ### Coverage Enforcement

@@ -78,9 +78,9 @@
 - [DONE] Run `make test` passes.
 - [DONE] Install pre-commit & verify hooks run on staged changes (*hook execution simulated; full run requires git repo*).
 
-### 11. Documentation Updates
-- [ ] Update main `README.md` Quickstart with: clone, `make venv install`, `source .venv/bin/activate`, run API & worker.
-- [ ] Add `CONTRIBUTING.md` describing quality gates and branch naming.
+### 11. Documentation Updates [DONE]
+- [DONE] Update main `README.md` Quickstart with: clone, `make venv install`, `source .venv/bin/activate`, run API & worker.
+- [DONE] Add `CONTRIBUTING.md` describing quality gates and branch naming.
 
 ### 12. Nice-to-Have (Optional in 0.1 if time)
 - [ ] `.vale.ini` for docs lint (defer if not needed).
