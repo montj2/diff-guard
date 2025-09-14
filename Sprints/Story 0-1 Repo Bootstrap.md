@@ -87,16 +87,16 @@
 - [DONE] `CODE_OF_CONDUCT.md`.
 - [DONE] `SECURITY.md` placeholder.
 
-### 13. Definition of Done Validation
-- [ ] All directories & stubs committed.
-- [ ] License present.
-- [ ] `make dev` completes without error.
-- [ ] Pre-commit passes on clean clone.
-- [ ] Health test green.
+### 13. Definition of Done Validation [DONE]
+- [DONE] All directories & stubs committed.
+- [DONE] License present.
+- [DONE] `make dev` completes without error.
+- [DONE] Pre-commit passes on clean clone.
+- [DONE] Health test green.
 
-### 14. Risks & Mitigations (Bootstrap Specific)
-- [ ] Pin deps to avoid breakage; update intentionally.
-- [ ] Keep Docker images small via multi-stage.
-- [ ] Enforce mypy strict early to prevent later refactors.
+### 14. Risks & Mitigations (Bootstrap Specific) [DONE]
+- [DONE] Pin deps to avoid breakage; update intentionally.
+- [DONE] Keep Docker images small via multi-stage.
+- [DONE] Enforce mypy strict early to prevent later refactors.
 
 (End of Execution Plan)
