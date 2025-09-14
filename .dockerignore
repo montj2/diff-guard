@@ -25,7 +25,20 @@ build/
 examples/fixtures/*.tgz
 examples/fixtures/*.tar.gz
 
-# Docs drafts
+# Documentation (retain core markdown needed for context; exclude sprint planning to slim build context)
 Sprints/
-*.md
-!README.md
+PROJECT_TASKS.md
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+SECURITY.md
+.vale.ini
+
+# Ignore coverage and test reports
+htmlcov/
+coverage.xml
+
+# Node (future)
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+yarn.lock

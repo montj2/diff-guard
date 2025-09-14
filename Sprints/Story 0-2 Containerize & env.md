@@ -19,9 +19,9 @@ Goal: Reproducible container images (API + worker) runnable together via a singl
 
 ## Execution Plan Checklist
 
-### 1. Repository Prep
-- [ ] Confirm existing `infra/Dockerfile.api` & `infra/Dockerfile.worker` baseline state.
-- [ ] Add/verify `.dockerignore` excludes: `.venv`, `__pycache__`, `*.pyc`, `.mypy_cache`, `.ruff_cache`, `.git`, `tests/__pycache__`, `dist`, `build`.
+### 1. Repository Prep [DONE]
+- [DONE] Confirm existing `infra/Dockerfile.api` & `infra/Dockerfile.worker` baseline state.
+- [DONE] Add/verify `.dockerignore` excludes: `.venv`, `__pycache__`, `*.pyc`, `.mypy_cache`, `.ruff_cache`, `.git`, `tests/__pycache__`, `dist`, `build`.
 
 ### 2. Base Image & Multi-Stage Strategy
 - [ ] Choose base: `python:3.11-slim` for both stages.
