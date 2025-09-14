@@ -1,17 +1,19 @@
+---
+# yamllint disable rule:truthy
 name: CI
 
 on:
   push:
-    branches: [ master, main, develop ]
+    branches: [master, main, develop]
   pull_request:
-    branches: [ master, main, develop ]
+    branches: [master, main, develop]
 
 jobs:
   build-test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.11"]  # TODO: consider 3.12 once deps validated
+        python-version: ["3.11"]  # TODO: eval 3.12 later
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -45,6 +47,3 @@ jobs:
 
       - name: TODO Backtest stub
         run: echo "Backtest placeholder (to be implemented in later story)"
-
-  # TODO: add separate job for building/pushing Docker images (deferred)
-  # NOTE: Coverage threshold enforced via make test-strict; ratchet upward as real tests grow.

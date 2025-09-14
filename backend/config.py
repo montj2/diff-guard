@@ -14,10 +14,10 @@ from pydantic import Field, HttpUrl
 try:  # pragma: no cover - import guard
     from pydantic_settings import BaseSettings
 except Exception:  # pragma: no cover - fallback
-    from pydantic import BaseModel as BaseSettings  # type: ignore[assignment]
+    from pydantic import BaseModel as BaseSettings  # pragma: no cover
 
 
-class Settings(BaseSettings):
+class Settings(BaseSettings):  # type: ignore[misc]
     artifactory_url: HttpUrl | None = Field(default=None, validation_alias="ARTIFACTORY_URL")
     artifactory_token: str | None = Field(default=None, validation_alias="ARTIFACTORY_TOKEN")
     staging_repo: str = Field(default="npm-staging", validation_alias="STAGING_REPO")

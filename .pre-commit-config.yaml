@@ -1,3 +1,4 @@
+---
 repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.5.0
@@ -32,11 +33,12 @@ repos:
       - id: end-of-file-fixer
       - id: trailing-whitespace
 
-# Optional: enable local strict coverage gate (uncomment to enforce before commits)
+# Optional: enable local strict coverage gate
+# (uncomment to enforce before commits)
 # - repo: local
 #   hooks:
 #     - id: pytest-strict-coverage
-#       name: pytest strict coverage (fail under $(COVERAGE_MIN)%)
+#       name: strict coverage gate
 #       entry: bash -c 'make test-strict COVERAGE_MIN=85'
 #       language: system
 #       pass_filenames: false
