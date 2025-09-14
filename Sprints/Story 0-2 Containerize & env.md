@@ -34,10 +34,10 @@ Goal: Reproducible container images (API + worker) runnable together via a singl
 - [DONE] Install Node only in worker image (unless API later needs it) to minimize API image size.
 - [DONE] Document reason for Node dependency in file header comment (used for npm package tarball diff).
 
-### 4. Python Dependency Layer Optimization
-- [ ] Export locked dependencies if needed (reuse `pyproject.toml` + `pip install .[dev]` in builder; runtime only prod deps via `pip install .`).
-- [ ] Consider producing a `requirements.lock` (optional; may defer to later story) and note decision.
-- [ ] Copy only necessary app directories (`backend`, `diff_worker`) + `pyproject.toml` into runtime.
+### 4. Python Dependency Layer Optimization [DONE]
+- [DONE] Export locked dependencies if needed (reuse `pyproject.toml` + `pip install .[dev]` in builder; runtime only prod deps via `pip install .`). (Decision: dev extras removed from images; single prod install used.)
+- [DONE] Consider producing a `requirements.lock` (optional; may defer to later story) and note decision. (Deferred: will introduce after dependency set stabilizes.)
+- [DONE] Copy only necessary app directories (`backend`, `diff_worker`) + `pyproject.toml` into runtime. (API image excludes worker code.)
 
 ### 5. API Dockerfile Implementation
 - [ ] Implement multi-stage with build then runtime.

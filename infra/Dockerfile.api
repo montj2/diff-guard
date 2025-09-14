@@ -12,10 +12,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential curl git && rm -rf /var/lib/apt/lists/*
 
 COPY pyproject.toml README.md LICENSE /app/
-RUN pip install --upgrade pip && pip install .[dev]
+RUN pip install --upgrade pip && pip install .
+# Copy only API backend code (worker code excluded to keep image smaller)
 COPY backend /app/backend
-COPY diff_worker /app/diff_worker
-RUN pip install .  # build wheel & install prod deps (dev deps existed earlier for possible code gen)
+## Decision: Requirements lock file deferred (Story 0.2 Section 4) in favor of pyproject reproducibility with pinned versions.
 
 FROM python:3.11-slim AS runtime
 ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
