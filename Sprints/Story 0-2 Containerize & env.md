@@ -29,10 +29,10 @@ Goal: Reproducible container images (API + worker) runnable together via a singl
 - [DONE] Use `PYTHONDONTWRITEBYTECODE=1` and `PYTHONUNBUFFERED=1` envs.
 - [DONE] Install build essentials (`build-essential`, `gcc`) only in builder stage; omit from runtime.
 
-### 3. Node / Diff Tooling Integration
-- [ ] Decide minimal Node install approach: Debian package (`nodejs`) or `corepack enable` if we later need pnpm; keep simple now.
-- [ ] Install Node only in worker image (unless API later needs it) to minimize API image size.
-- [ ] Document reason for Node dependency in file header comment (used for npm package tarball diff).
+### 3. Node / Diff Tooling Integration [DONE]
+- [DONE] Decide minimal Node install approach: Debian package (`nodejs`) or `corepack enable` if we later need pnpm; keep simple now.
+- [DONE] Install Node only in worker image (unless API later needs it) to minimize API image size.
+- [DONE] Document reason for Node dependency in file header comment (used for npm package tarball diff).
 
 ### 4. Python Dependency Layer Optimization
 - [ ] Export locked dependencies if needed (reuse `pyproject.toml` + `pip install .[dev]` in builder; runtime only prod deps via `pip install .`).
