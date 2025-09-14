@@ -39,12 +39,12 @@ Goal: Reproducible container images (API + worker) runnable together via a singl
 - [DONE] Consider producing a `requirements.lock` (optional; may defer to later story) and note decision. (Deferred: will introduce after dependency set stabilizes.)
 - [DONE] Copy only necessary app directories (`backend`, `diff_worker`) + `pyproject.toml` into runtime. (API image excludes worker code.)
 
-### 5. API Dockerfile Implementation
-- [ ] Implement multi-stage with build then runtime.
-- [ ] Create non-root user (`appuser`) and switch in final stage.
-- [ ] Set working directory `/app`.
-- [ ] Expose port 8000 (FastAPI default in Makefile doc) or confirm chosen port.
-- [ ] Entrypoint/CMD executes uvicorn via module: `uvicorn backend.app:app --host 0.0.0.0 --port 8000`.
+### 5. API Dockerfile Implementation [DONE]
+- [DONE] Implement multi-stage with build then runtime.
+- [DONE] Create non-root user (`appuser`) and switch in final stage.
+- [DONE] Set working directory `/app`.
+- [DONE] Expose port 8000 (FastAPI default in Makefile doc) or confirm chosen port.
+- [DONE] Entrypoint/CMD executes uvicorn via module: `uvicorn backend.app:app --host 0.0.0.0 --port 8000`.
 
 ### 6. Worker Dockerfile Implementation
 - [ ] Mirror multi-stage pattern from API but include Node install.

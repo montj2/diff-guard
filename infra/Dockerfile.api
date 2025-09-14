@@ -28,7 +28,10 @@ COPY --from=builder /usr/local/bin/uvicorn /usr/local/bin/uvicorn
 # Copy application source (only API part strictly needed but keep backend subset for now)
 COPY backend /app/backend
 
-# TODO (Story 0.2 Section 5): add non-root user (appuser) & chown files
+# Add non-root user (least privilege)
+RUN useradd --create-home --shell /usr/sbin/nologin appuser \
+    && chown -R appuser:appuser /app
+USER appuser
 
 EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD curl -fsS http://localhost:8000/health || exit 1
