@@ -23,11 +23,11 @@ Goal: Reproducible container images (API + worker) runnable together via a singl
 - [DONE] Confirm existing `infra/Dockerfile.api` & `infra/Dockerfile.worker` baseline state.
 - [DONE] Add/verify `.dockerignore` excludes: `.venv`, `__pycache__`, `*.pyc`, `.mypy_cache`, `.ruff_cache`, `.git`, `tests/__pycache__`, `dist`, `build`.
 
-### 2. Base Image & Multi-Stage Strategy
-- [ ] Choose base: `python:3.11-slim` for both stages.
-- [ ] Stage names: `builder` (install build deps, compile wheels) -> `runtime` (copy wheels/site-packages + source minimal).
-- [ ] Use `PYTHONDONTWRITEBYTECODE=1` and `PYTHONUNBUFFERED=1` envs.
-- [ ] Install build essentials (`build-essential`, `gcc`) only in builder stage; omit from runtime.
+### 2. Base Image & Multi-Stage Strategy [DONE]
+- [DONE] Choose base: `python:3.11-slim` for both stages.
+- [DONE] Stage names: `builder` (install build deps, compile wheels) -> `runtime` (copy wheels/site-packages + source minimal).
+- [DONE] Use `PYTHONDONTWRITEBYTECODE=1` and `PYTHONUNBUFFERED=1` envs.
+- [DONE] Install build essentials (`build-essential`, `gcc`) only in builder stage; omit from runtime.
 
 ### 3. Node / Diff Tooling Integration
 - [ ] Decide minimal Node install approach: Debian package (`nodejs`) or `corepack enable` if we later need pnpm; keep simple now.
